@@ -18,12 +18,15 @@ import static org.junit.Assert.assertEquals;
 public class MyStepdefs {
 
     private WebDriver driver;
+
+    //Privat metod som använder explicit wait
     private static void click(WebDriver driver, By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
         element.click();
     }
 
+    //Användning av flera browsers
     @Given("I am using {string} on the create an account page")
     public void iAmUsing(String browser) {
 
